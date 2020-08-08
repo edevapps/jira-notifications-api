@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <groupId>com.edevapps.jira.applications</groupId>
+  <artifactId>jira-notifications-api</artifactId>
+  <version>1.0.0</version>
+  <modelVersion>4.0.0</modelVersion>
+
+  <organization>
+    <name>eDevApps</name>
+    <url>http://edevapps.com/</url>
+  </organization>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.atlassian.jira</groupId>
+      <artifactId>jira-api</artifactId>
+      <version>${jira.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>jira-notifications-api</finalName>
+    <plugins>
+
+      <!-- Set a JDK compiler level -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>${jdk.version}</source>
+          <target>${jdk.version}</target>
+        </configuration>
+      </plugin>
+
+      <!-- Make this jar executable -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <properties>
+    <jdk.version>1.8</jdk.version>
+    <junit.version>4.12</junit.version>
+    <jira.version>8.0.0</jira.version>
+  </properties>
+</project>
