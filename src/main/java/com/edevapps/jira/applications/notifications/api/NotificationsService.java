@@ -16,6 +16,7 @@
 
 package com.edevapps.jira.applications.notifications.api;
 
+import com.atlassian.jira.user.ApplicationUser;
 import java.util.List;
 
 /**
@@ -30,6 +31,30 @@ public interface NotificationsService {
    * @param notification  notification parameters object
    */
   void sendToNotificationGroup(String notificationGroupName, Notification notification);
+
+  /**
+   * Send to user.
+   *
+   * @param user the user
+   * @param notification the notification
+   */
+  void sendToUser(ApplicationUser user, Notification notification);
+
+  /**
+   * Send to user.
+   *
+   * @param userId the user id
+   * @param notification the notification
+   */
+  void sendToUser(long userId, Notification notification);
+
+  /**
+   * Send to user group.
+   *
+   * @param userGroupName the user group name
+   * @param notification the notification
+   */
+  void sendToUserGroup(String userGroupName, Notification notification);
 
   /**
    * Returns a list of notification groups registered in the message service.
